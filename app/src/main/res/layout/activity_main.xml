@@ -7,13 +7,117 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="413dp"
+            android:layout_height="198dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/numberTwoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Enter Number"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/numberOneText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Number"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/divideButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:width="90dp"
+                    android:maxWidth="90dp"
+                    android:minWidth="90dp"
+                    android:onClick="onDivide"
+                    android:text="÷"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/timesButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:width="90dp"
+                    android:maxWidth="90dp"
+                    android:minWidth="90dp"
+                    android:onClick="onMultiply"
+                    android:text="x"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="215dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="98dp"
+                android:layout_marginEnd="98dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/minusButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:width="90dp"
+                    android:height="60dp"
+                    android:maxWidth="90dp"
+                    android:maxHeight="60dp"
+                    android:minWidth="90dp"
+                    android:minHeight="60dp"
+                    android:onClick="onSubtraction"
+                    android:text="-"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/plusButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:width="90dp"
+                    android:maxWidth="90dp"
+                    android:minWidth="90dp"
+                    android:onClick="onPlus"
+                    android:text="+"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:hint="Result"
+            android:textAlignment="center" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

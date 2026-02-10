@@ -1,49 +1,87 @@
 package com.basiccalculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText numberOneText;
+    EditText numberTwoText;
+    TextView resultText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("On Create");
+
+        numberOneText = findViewById(R.id.numberOneText);
+        numberTwoText = findViewById(R.id.numberTwoText);
+        resultText = findViewById(R.id.resultText);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        System.out.println("On Start");
+    @SuppressLint("SetTextI18n")
+    public void onPlus(View view){
+        String numberOneString = numberOneText.getText().toString();
+        String numberTwoString = numberTwoText.getText().toString();
+
+        if (!(numberOneString.isEmpty() || numberTwoString.isEmpty())){
+            int numberOne = Integer.parseInt(numberOneString);
+            int numberTwo = Integer.parseInt(numberTwoText.getText().toString());
+            int result = numberOne + numberTwo;
+            resultText.setText("Result: " + result);
+        } else {
+            resultText.setText("Enter a number!");
+        }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        System.out.println("On Resume");
+    @SuppressLint("SetTextI18n")
+    public void onSubtraction(View view){
+        String numberOneString = numberOneText.getText().toString();
+        String numberTwoString = numberTwoText.getText().toString();
+
+        if (!(numberOneString.isEmpty() || numberTwoString.isEmpty())){
+            int numberOne = Integer.parseInt(numberOneString);
+            int numberTwo = Integer.parseInt(numberTwoText.getText().toString());
+            int result = numberOne - numberTwo;
+            resultText.setText("Result: " + result);
+        } else {
+            resultText.setText("Enter a number!");
+        }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        System.out.println("On Pause");
+    @SuppressLint("SetTextI18n")
+    public void onDivide(View view){
+        String numberOneString = numberOneText.getText().toString();
+        String numberTwoString = numberTwoText.getText().toString();
+
+        if (!(numberOneString.isEmpty() || numberTwoString.isEmpty())){
+            int numberOne = Integer.parseInt(numberOneString);
+            int numberTwo = Integer.parseInt(numberTwoText.getText().toString());
+            int result = numberOne / numberTwo;
+            resultText.setText("Result: " + result);
+        } else {
+            resultText.setText("Enter a number!");
+        }
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        System.out.println("On Stop");
-    }
+    @SuppressLint("SetTextI18n")
+    public void onMultiply(View view){
+        String numberOneString = numberOneText.getText().toString();
+        String numberTwoString = numberTwoText.getText().toString();
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        System.out.println("On Restart");
+        if (!(numberOneString.isEmpty() || numberTwoString.isEmpty())){
+            int numberOne = Integer.parseInt(numberOneString);
+            int numberTwo = Integer.parseInt(numberTwoText.getText().toString());
+            int result = numberOne * numberTwo;
+            resultText.setText("Result: " + result);
+        } else {
+            resultText.setText("Enter a number!");
+        }
     }
 }
